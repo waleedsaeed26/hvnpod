@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HVNPOD - Launching the Future of Work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-main: #f5f5f7;
+            --text-muted: #86868b;
+            --apple-blue: #2997ff;
+            --card-bg: #1d1d1f;
+            --border-rad: 18px;
+            --font-main: 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.5;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Apple-style Mac/Nav Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            z-index: 9999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 48px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-logo { font-weight: 800; font-size: 16px; letter-spacing: 1px; }
+        .nav-btn {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            border: none;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .nav-btn:hover { background-color: rgba(255,255,255,0.8); }
+
+        /* Sections & Spacing */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 980px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Typography - Huge and Bold */
+        h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #fff 0%, #86868b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.015em;
+        }
+
+        p.hero-p {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-muted);
+            font-weight: 600;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        .accent-gradient {
+            background: linear-gradient(90deg, #2997ff, #ab61fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px) scale(0.95);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Apple-style Cards / Tasks (ADHD Friendly - highly organized) */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
+            text-align: right;
+        }
+
+        .apple-card {
+            background: var(--card-bg);
+            border-radius: var(--border-rad);
+            padding: 40px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apple-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .apple-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .apple-card p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        /* Apple iOS Toggle style for Tasks */
+        .task-list {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255,255,255,0.05);
+            padding: 15px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .task-item:hover { background: rgba(255,255,255,0.08); }
+
+        .task-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            transition: opacity 0.3s;
+        }
+
+        /* Toggle Component */
+        .toggle {
+            width: 44px;
+            height: 24px;
+            background-color: #39393d;
+            border-radius: 20px;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+
+        .toggle::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .task-item.done .toggle { background-color: #32d74b; }
+        .task-item.done .toggle::after { transform: translateX(-20px); }
+        .task-item.done .task-text { opacity: 0.4; text-decoration: line-through; }
+
+        /* Special One More Thing effect */
+        .one-more-thing {
+            font-style: italic;
+            font-weight: 400;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--text-muted);
+        }
+
+        /* Huge Quote Section */
+        .quote-section {
+            background: #111;
+            padding: 80px 20px;
+        }
+        .quote-text {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-main);
+        }
+        .quote-author {
+            color: var(--text-muted);
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        /* Focus Widget (Steve's Zen mode) */
+        .zen-widget {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(30,30,30, 0.6);
+            backdrop-filter: blur(20px);
+            padding: 10px 30px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 999;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .zen-timer {
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-family: -apple-system, monospace;
+            letter-spacing: 1px;
+        }
+        .zen-btn {
+            background: transparent;
+            border: none;
+            color: var(--apple-blue);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .zen-btn:hover { color: #fff; }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Apple-style Navigation -->
+    <nav>
+        <div class="nav-logo">HVNPOD</div>
+        <button class="nav-btn" onclick="scrollToB2B()">B2B Strategy</button>
+    </nav>
+
+    <!-- SECTION 1: The Vision (Hero) -->
+    <section>
+        <div class="container reveal">
+            <h1>أعظم مساحة للتركيز <br>عرفها العالم.</h1>
+            <p class="hero-p">نحن لا نصنع كبائن. نحن نعيد اختراع الطريقة التي ينجز بها البشر أعظم أعمالهم. لقد كانت المكاتب المفتوحة خطأ، واليوم، نحن نصحح هذا الخطأ.</p>
+            <p style="color: var(--apple-blue); font-size: 1.2rem; font-weight: 600;">متوفر للطلب المسبق. التركيب في 48 ساعة.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Phase 1 - Secrecy (Pre-launch) -->
+    <section style="background-color: #000;">
+        <div class="container reveal text-center">
+            <h2 style="font-size: 2rem; color: var(--text-muted);">المرحلة الأولى: أسبوع 1-2</h2>
+            <h2>السرية المطلقة. <br><span class="accent-gradient">التفرد.</span></h2>
+            <p class="hero-p">لا تتحدث حتى يصبح ما لديك مثالياً. التفاصيل ليست أموراً ثانوية.. التفاصيل هي المنتج. سنجهز المسرح في صمت تام.</p>
+            
+            <div class="grid-2">
+                <div class="apple-card">
+                    <h3>الكمال البصري</h3>
+                    <p>تصميمات 3D التي لا يمكنك التفريق بينها وبين الواقع. موقع إلكتروني يعكس الفخامة لا يحتاج لدليل استخدام.</p>
+                    <div class="task-list">
+                        <div class="task-item" onclick="toggleOption(this)">
+                            <span class="task-text">رندرات 3D خالية من العيوب (4 ألوان)</span>
+                            <div class="toggle"></div>
+                        </div>
+                        <div class="task-item" onclick="toggleOption(this)">
+                            <span class="task-text">إطلاق صفحة الـ Waitlist الحصرية</span>
+                            <div class="toggle"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="apple-card">
+                    <h3>رواد الفكر (Early Believers)</h3>
+                    <p>لا نبحث عن الجميع. نبحث عن 500 شخص غاضبين من الإزعاج، و15 مهندس ديكور يفهمون الرؤية.</p>
+                    <div class="task-list">
+                        <div class="task-item" onclick="toggleOption(this)">
+                            <span class="task-text">تجهيز 3 رسائل غامضة للينكد إن</span>
+                            <div class="toggle"></div>
+                        </div>
+                        <div class="task-item" onclick="toggleOption(this)">
+                            <span class="task-text">اختيار 15 مؤثراً فكرياً (بلا إحداث ضجة)</span>
+                            <div class="toggle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Phase 2 - Launch Week (The Event) -->
+    <section style="background-color: #0a0a0c;">
+        <div class="container reveal">
+            <h2 style="font-size: 2rem; color: var(--text-muted);">المرحلة الثانية: أسبوع الإطلاق</h2>
+            <h2>ثلاثة منتجات ثورية. <br>أسبوع واحد.</h2>
+            <p class="hero-p">كما أعاد الآيفون تعريف الهاتف، HVNPOD سيعيد تعريف مكان عملك. كل يوم سنكشف عن سحر جديد.</p>
+
+            <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="apple-card">
+                    <h3 style="font-size: 1.4rem;">الإثنين: الكشف</h3>
+                    <p>إعلان الرؤية. "HVNPOD موجود هنا". تغريدة واحدة، فيديو واحد يقطّر فخامة. لا شرح.</p>
+                </div>
+                <div class="apple-card">
+                    <h3 style="font-size: 1.4rem;">HVNPOD One</h3>
+                    <p>الثلاثاء. نعرض مساحة الفرد العبقري. 30 ديسيبل من العزل الصوتي الخالص.</p>
+                </div>
+                <div class="apple-card">
+                    <h3 style="font-size: 1.4rem;">HVNPOD Duo</h3>
+                    <p>الأربعاء. للمحادثات التي تغير مجرى الشركات. شخصان، سرية تامة.</p>
+                </div>
+                <div class="apple-card">
+                    <h3 style="font-size: 1.4rem;">HVNPOD Meet</h3>
+                    <p>الخميس. لأن فرق العمل تحتاج لغرفة قرارات حاسمة.. تُبنى في يومين فقط.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: One More Thing (Post Launch) -->
+    <section style="background-color: #000;">
+        <div class="container reveal text-center">
+            <div class="one-more-thing">"ونقطة أخرى..."</div>
+            <h2>تاريخ يُصنع. وليس مجرد كبائن.</h2>
+            <p class="hero-p">الأسابيع 3 إلى 12: اترك العملاء يتحدثون. سنقوم بزيارة روادنا، تصوير المكاتب قبل وبعد، وسنسمع كيف عاد الهدوء لشركاتهم.</p>
+            
+            <div class="grid-2">
+                <div class="apple-card">
+                    <h3>Case Studies (القصص الحقيقية)</h3>
+                    <div class="task-list">
+                        <div class="task-item" onclick="toggleOption(this)">
+                            <span class="task-text">توثيق تجربة أول عميل (فيديو)</span>
+                            <div class="toggle"></div>
+                        </div>
+                        <div class="task-item" onclick="toggleOption(this)">
+                            <span class="task-text">نشر مقالات عن التكلفة الحقيقية للإزعاج</span>
+                            <div class="toggle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: B2B Strategy (Jobs style logic) -->
+    <section id="b2b-section" class="quote-section">
+        <div class="container reveal text-center">
+            <div class="quote-text">
+                "الشركات لا تشتري صندوقاً زجاجياً، بل تشتري تركيز موظفيها المفقود."
+            </div>
+            <div class="quote-author">فلسفة B2B المتطورة لـ HVNPOD</div>
+            
+            <p class="hero-p" style="margin-top: 40px;">لا ترسل ملفات PDF مملة. اذهب لرموز الإدارة في الشركات (عبر لينكد إن)، وقل لهم عبارة واحدة: "إنها تكلفكم الكثير من الأفكار العظيمة. لدينا الحل." قدم لهم (تجربة الكابينة الحية). اجعلهم يجلسون بداخلها.. الصمت سيبيع نفسه.</p>
+            
+            <div class="task-list" style="max-width: 500px; margin: 0 auto;">
+                <div class="task-item" onclick="toggleOption(this)">
+                    <span class="task-text">اعتماد رسالة B2B المباشرة والمختصرة جداً</span>
+                    <div class="toggle"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zen Timer (Focus Mode alternative) -->
+    <div class="zen-widget">
+        <span style="color: var(--text-muted); font-size: 0.9rem;">التركيز العميق:</span>
+        <div class="zen-timer" id="zenTimer">25:00</div>
+        <button class="zen-btn" onclick="toggleZenTimer()" id="zenBtn">Start</button>
+    </div>
+
+    <script>
+        // Intersection Observer for scroll animations (The "Apple Fade-In Up")
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => {
+            revealOnScroll.observe(el);
+        });
+
+        // Trigger first section immediately
+        setTimeout(() => {
+            document.querySelector('.reveal').classList.add('active');
+        }, 300);
+
+        // Toggle micro-tasks (Apple style switches)
+        function toggleOption(element) {
+            element.classList.toggle('done');
+            
+            // Check if all are done
+            const total = document.querySelectorAll('.task-item').length;
+            const done = document.querySelectorAll('.task-item.done').length;
+            if (total === done && total > 0) {
+                setTimeout(() => {
+                    alert('هذا ما أسميه الإتقان. لقد أنهيت كل شيء.');
+                }, 400);
+            }
+        }
+
+        // Scroll to B2B
+        function scrollToB2B() {
+            document.getElementById('b2b-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Zen Timer Logic (Steve Jobs Focus Mode)
+        let zenTime = 25 * 60;
+        let zenRunning = false;
+        let zenInterval;
+
+        function updateZenDisplay() {
+            let m = Math.floor(zenTime / 60);
+            let s = zenTime % 60;
+            document.getElementById('zenTimer').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }
+
+        function toggleZenTimer() {
+            const btn = document.getElementById('zenBtn');
+            if (zenRunning) {
+                clearInterval(zenInterval);
+                zenRunning = false;
+                btn.innerText = 'Start';
+                btn.style.color = 'var(--apple-blue)';
+            } else {
+                zenRunning = true;
+                btn.innerText = 'Pause';
+                btn.style.color = '#ff3b30'; // Apple Red
+                zenInterval = setInterval(() => {
+                    if (zenTime > 0) {
+                        zenTime--;
+                        updateZenDisplay();
+                    } else {
+                        clearInterval(zenInterval);
+                        zenRunning = false;
+                        btn.innerText = 'Done';
+                        alert("Stay Hungry, Stay Foolish... خذ استراحة الآن.");
+                    }
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

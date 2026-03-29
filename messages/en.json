@@ -1,0 +1,264 @@
+{
+  "metadata": {
+    "title": "HVNPOD — Premium Acoustic Pods",
+    "description": "Premium acoustic pods for focused work — without construction. Designed for offices that need privacy fast."
+  },
+  "nav": {
+    "products": "Products",
+    "configure": "Configure",
+    "about": "About",
+    "journal": "Journal",
+    "contact": "Contact",
+    "requestQuote": "Request Quote",
+    "login": "Login",
+    "admin": "Dashboard"
+  },
+  "hero": {
+    "title": "Spaces,",
+    "subtitle": "Reimagined.",
+    "description": "Acoustic privacy without construction. A room within a room — designed for focus, conversation, and calm.",
+    "explorePods": "Explore Pods",
+    "bookTrial": "Book a Trial"
+  },
+  "problem": {
+    "title": "The problem",
+    "noise": "Open-plan noise kills productivity",
+    "privacy": "No space for private calls or HR conversations",
+    "construction": "Building rooms means disruption and delay",
+    "solutionTitle": "The HVNPOD solution",
+    "acoustics": "30 dB acoustic isolation",
+    "plugPlay": "Plug & play — no construction needed",
+    "fastDeploy": "2–3 week lead time",
+    "warranty": "2-year warranty included"
+  },
+  "products": {
+    "title": "The HVNPOD Range",
+    "subtitle": "Three models. One standard: premium.",
+    "startingFrom": "Starting from",
+    "configure": "Configure",
+    "requestQuote": "Request Quote",
+    "viewAll": "View All Products",
+    "comingSoon": "Coming Soon",
+    "joinWaitlist": "Join the Waitlist",
+    "waitlistDesc": "Be the first to know when this category launches.",
+    "comparison": "Compare Models",
+    "specs": "Specifications",
+    "features": "Features",
+    "capacity": "Capacity",
+    "idealFor": "Ideal for"
+  },
+  "models": {
+    "one": {
+      "name": "HVNPOD One",
+      "tagline": "Solo focus",
+      "description": "The essential privacy pod for focused work. Perfect for calls, deep work sessions, and video meetings.",
+      "idealFor": "Calls · Deep work · Video meetings"
+    },
+    "duo": {
+      "name": "HVNPOD Duo",
+      "tagline": "Private collaboration",
+      "description": "Space for two. Designed for private conversations, interviews, and mentoring sessions.",
+      "idealFor": "1:1 meetings · Interviews · Mentoring"
+    },
+    "meet": {
+      "name": "HVNPOD Meet",
+      "tagline": "Compact meeting room",
+      "description": "A complete meeting space for up to four. Ideal for team huddles, client calls, and presentations.",
+      "idealFor": "Team huddles · Client calls · Presentations"
+    }
+  },
+  "tiers": {
+    "core": {
+      "name": "Core",
+      "description": "Essential acoustic package"
+    },
+    "plus": {
+      "name": "Plus",
+      "description": "Enhanced materials + smart lighting"
+    },
+    "signature": {
+      "name": "Signature",
+      "description": "Premium finish + conveniences"
+    }
+  },
+  "configurator": {
+    "title": "Configure Your Pod",
+    "subtitle": "Build your perfect HVNPOD in 4 steps.",
+    "step1": "Choose Model",
+    "step2": "Choose Tier",
+    "step3": "Choose Color",
+    "step4": "Quantity & Review",
+    "selectModel": "Select your pod model",
+    "selectTier": "Select your specification tier",
+    "selectColor": "Select your pod color",
+    "quantity": "Quantity",
+    "volumeDiscount": "Volume discount",
+    "unitPrice": "Unit price",
+    "total": "Total",
+    "summary": "Configuration Summary",
+    "submitQuote": "Request Quote",
+    "next": "Next",
+    "back": "Back"
+  },
+  "about": {
+    "title": "Designed Around You",
+    "subtitle": "HVNPOD is not just an acoustic pod brand. It is a premium design-led brand creating products and spaces that make life smarter, calmer, and better suited for a new era.",
+    "missionTitle": "Our Mission",
+    "mission": "Solve real problems with premium, minimal, architectural solutions — designed around the way people actually live and work today.",
+    "valuesTitle": "What Drives Us",
+    "value1Title": "Solve real problems",
+    "value1": "Not aesthetic noise. Every product addresses a genuine need.",
+    "value2Title": "Premium & minimal",
+    "value2": "Architectural rather than gadget-heavy or generic-tech.",
+    "value3Title": "Human-centered",
+    "value3": "Designed around the way people actually live and work.",
+    "value4Title": "Future-ready",
+    "value4": "Built to scale from pods to smart furniture to modular living.",
+    "whyTitle": "Why HVNPOD",
+    "why1Title": "Fast deployment",
+    "why1": "No build-out, no dusty fit-out, no downtime.",
+    "why2Title": "Premium feel",
+    "why2": "Clean finish, integrated power, ventilation, and lighting.",
+    "why3Title": "Commercial clarity",
+    "why3": "Three tiers, clear starting prices, volume discounts.",
+    "why4Title": "Low-friction decision",
+    "why4": "Trial-led approach lowers risk.",
+    "designPrinciplesEyebrow": "Design Philosophy",
+    "designPrinciplesTitle": "Design Principles",
+    "principle1Title": "Architectural Minimalism",
+    "principle1": "Every element earns its place. If it does not serve a structural, acoustic, or user-experience function, it is removed.",
+    "principle2Title": "Tactile Premium",
+    "principle2": "Materials and finishes communicate quality through touch and sight before a single word is read.",
+    "principle3Title": "Functional Elegance",
+    "principle3": "Beauty that serves a purpose — never decorative for its own sake.",
+    "principle4Title": "Confident Restraint",
+    "principle4": "Knowing what to leave out is as important as what to include.",
+    "brandVoiceSubtitle": "The brand voice in three words.",
+    "whatWeAreNotTitle": "What HVNPOD is not.",
+    "whatWeAreNotEyebrow": "Clarity",
+    "misconception1Myth": "\"It's a phone booth\"",
+    "misconception1Truth": "It is an architectural acoustic environment.",
+    "misconception2Myth": "\"It's a cheap solution\"",
+    "misconception2Truth": "Premium engineering, materials, and acoustic performance.",
+    "misconception3Myth": "\"It's just for open offices\"",
+    "misconception3Truth": "Studios, clinics, hotels, homes — anywhere acoustic privacy matters.",
+    "misconception4Myth": "\"It's a permanent construction\"",
+    "misconception4Truth": "Deployed, not built. Relocated, reconfigured, or removed. No permits.",
+    "misconception5Myth": "\"It's a tech gadget\"",
+    "misconception5Truth": "Technology serves acoustic function. Defined by what it does to your environment.",
+    "symbolMeaning": "The concentric squares represent a room within a room — personal boundaries defined by design."
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "step1Title": "Choose your pod",
+    "step1": "Select from One, Duo, or Meet based on your space needs.",
+    "step2Title": "Configure your tier",
+    "step2": "Pick Core, Plus, or Signature for the right level of finish.",
+    "step3Title": "We assess your space",
+    "step3": "Our team visits to ensure perfect placement and setup.",
+    "step4Title": "Delivered & installed",
+    "step4": "Your pod arrives ready to use in 2–3 weeks."
+  },
+  "specs": {
+    "acoustics": "30 dB Acoustics",
+    "ventilation": "Built-in Ventilation",
+    "plugPlay": "Plug & Play",
+    "warranty": "2-Year Warranty",
+    "leadTime": "2–3 Week Lead Time"
+  },
+  "journal": {
+    "title": "Journal",
+    "subtitle": "Insights on workspace design, acoustic privacy, and the future of work.",
+    "readMore": "Read more",
+    "allPosts": "All Posts",
+    "caseStudies": "Case Studies",
+    "news": "News"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Whether you need a quote, a site assessment, or just have a question — we're here.",
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "company": "Company name",
+    "subject": "Subject",
+    "message": "Your message",
+    "submit": "Send Message",
+    "success": "Message sent successfully. We'll be in touch soon.",
+    "bookAssessment": "Book a Site Assessment",
+    "subjects": {
+      "general": "General Inquiry",
+      "quote": "Request a Quote",
+      "partnership": "Partnership",
+      "press": "Press & Media"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about HVNPOD products.",
+    "categories": {
+      "products": "Products",
+      "ordering": "Ordering",
+      "delivery": "Delivery & Installation",
+      "maintenance": "Maintenance",
+      "warranty": "Warranty"
+    }
+  },
+  "newsletter": {
+    "title": "Stay in the loop",
+    "description": "Get product updates, workspace insights, and exclusive offers.",
+    "placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "success": "Subscribed! You'll hear from us soon."
+  },
+  "footer": {
+    "tagline": "Silence, on demand.",
+    "products": "Products",
+    "company": "Company",
+    "support": "Support",
+    "connect": "Connect",
+    "siteAssessment": "Site Assessment",
+    "rights": "All rights reserved."
+  },
+  "cta": {
+    "readyTitle": "Ready to solve privacy?",
+    "readySubtitle": "Book a live trial or request a quote today.",
+    "bookTrial": "Book a Live Trial",
+    "requestQuote": "Request Quote"
+  },
+  "auth": {
+    "login": "Sign In",
+    "register": "Create Account",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Full Name",
+    "company": "Company",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signUp": "Sign Up",
+    "signIn": "Sign In"
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "quotes": "Quotes",
+    "assessments": "Assessments",
+    "blog": "Blog",
+    "messages": "Messages",
+    "users": "Users",
+    "totalQuotes": "Total Quotes",
+    "pendingQuotes": "Pending Quotes",
+    "totalProducts": "Products",
+    "subscribers": "Subscribers"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "notFound": "Page not found",
+    "backHome": "Back to Home",
+    "learnMore": "Learn more",
+    "viewDetails": "View Details"
+  }
+}

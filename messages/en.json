@@ -220,6 +220,21 @@
     "siteAssessment": "Site Assessment",
     "rights": "All rights reserved."
   },
+  "whyHvnpod": {
+    "eyebrow": "Why HVNPOD",
+    "headline": "The world got louder. We built the quiet.",
+    "focusHeadline": "The sound of deep work.",
+    "focusBody": "30 decibels of silence between your team and the noise around them. No construction. No waiting.",
+    "focusSpec": "Class III acoustic rating",
+    "spaceHeadline": "A room that wasn't there yesterday.",
+    "spaceBody": "Plug in at 9 AM. Take your first call by 9:15. No permits, no contractors, no booking system. When your floor plan changes, HVNPOD moves with you.",
+    "spaceSpec1": "2hr setup",
+    "spaceSpec2": "Relocates in 60 min",
+    "spaceSpec3": "Zero construction",
+    "craftHeadline": "Engineered to outlast the office around it.",
+    "craftBody": "Brushed steel. Acoustic fabric that ages with dignity. Every surface chosen to feel as good in year five as it does on day one.",
+    "craftSpec": "5-year structural warranty"
+  },
   "cta": {
     "readyTitle": "Ready to solve privacy?",
     "readySubtitle": "Book a live trial or request a quote today.",

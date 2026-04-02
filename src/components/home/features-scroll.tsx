@@ -1,11 +1,13 @@
 "use client";
 
+import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { TextReveal } from "@/components/animations/text-reveal";
 import { Counter } from "@/components/animations/counter";
 import { FadeInView } from "@/components/animations/fade-in-view";
 
 /* ─── Block 1: Focus — cinematic stat reveal ─── */
-function FocusBlock() {
+function FocusBlock({ t }: { t: ReturnType<typeof useTranslations> }) {
   return (
     <div className="mx-auto max-w-6xl px-6 lg:px-16">
       <div className="flex flex-col lg:flex-row items-start lg:items-end gap-10 lg:gap-20">
@@ -27,13 +29,13 @@ function FocusBlock() {
         <FadeInView direction="right" delay={0.3} duration={0.7} className="lg:pb-4">
           <div className="space-y-4 max-w-md">
             <h3 className="font-[family-name:var(--font-heading)] text-2xl sm:text-3xl font-bold tracking-tight text-hvn-black">
-              The sound of deep work.
+              {t("focusHeadline")}
             </h3>
             <p className="text-base lg:text-lg leading-relaxed text-hvn-steel">
-              30 decibels of silence between your team and the noise around them. No construction. No waiting.
+              {t("focusBody")}
             </p>
             <span className="inline-block font-[family-name:var(--font-mono)] text-xs tracking-wide text-hvn-forest/70">
-              Class III acoustic rating
+              {t("focusSpec")}
             </span>
           </div>
         </FadeInView>
@@ -42,16 +44,22 @@ function FocusBlock() {
   );
 }
 
-/* ─── Block 2: Space — split with image placeholder ─── */
-function SpaceBlock() {
+/* ─── Block 2: Space — split with image ─── */
+function SpaceBlock({ t }: { t: ReturnType<typeof useTranslations> }) {
   return (
     <div className="bg-hvn-cream/40">
       <div className="mx-auto max-w-6xl px-6 lg:px-16 py-24 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image placeholder */}
+          {/* Pod image */}
           <FadeInView direction="left" duration={0.8}>
-            <div className="aspect-[3/4] w-full max-w-md mx-auto lg:mx-0 rounded-2xl bg-gradient-to-br from-hvn-cream to-hvn-pearl border border-hvn-mist/40 overflow-hidden flex items-end justify-center">
-              <div className="w-[60%] h-[70%] rounded-t-xl bg-gradient-to-b from-hvn-mist/30 to-hvn-mist/10" />
+            <div className="aspect-[3/4] w-full max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden">
+              <Image
+                src="/images/products/hvnpod-one-white.png"
+                alt="HVNPOD One acoustic pod"
+                width={500}
+                height={667}
+                className="w-full h-full object-cover"
+              />
             </div>
           </FadeInView>
 
@@ -59,13 +67,13 @@ function SpaceBlock() {
           <FadeInView direction="right" delay={0.15} duration={0.7}>
             <div className="space-y-6">
               <h3 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight leading-tight text-hvn-black">
-                A room that wasn&apos;t there yesterday.
+                {t("spaceHeadline")}
               </h3>
               <p className="text-base lg:text-lg leading-relaxed text-hvn-steel max-w-lg">
-                Plug in at 9 AM. Take your first call by 9:15. No permits, no contractors, no booking system. When your floor plan changes, HVNPOD moves with you.
+                {t("spaceBody")}
               </p>
               <div className="flex flex-wrap items-center gap-3 pt-2">
-                {["2hr setup", "Relocates in 60 min", "Zero construction"].map((spec) => (
+                {[t("spaceSpec1"), t("spaceSpec2"), t("spaceSpec3")].map((spec) => (
                   <span
                     key={spec}
                     className="rounded-full border border-hvn-mist bg-hvn-white px-4 py-2 font-[family-name:var(--font-mono)] text-xs tracking-wide text-hvn-steel"
@@ -83,7 +91,7 @@ function SpaceBlock() {
 }
 
 /* ─── Block 3: Craft — centered typographic statement ─── */
-function CraftBlock() {
+function CraftBlock({ t }: { t: ReturnType<typeof useTranslations> }) {
   return (
     <div className="mx-auto max-w-4xl px-6 lg:px-16 text-center">
       {/* Decorative line */}
@@ -92,15 +100,15 @@ function CraftBlock() {
       <TextReveal
         className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-tight text-hvn-black"
       >
-        Engineered to outlast the office around it.
+        {t("craftHeadline")}
       </TextReveal>
 
       <FadeInView direction="up" delay={0.2} duration={0.6}>
         <p className="mt-8 mx-auto max-w-xl text-base lg:text-lg leading-relaxed text-hvn-steel">
-          Brushed steel. Acoustic fabric that ages with dignity. Every surface chosen to feel as good in year five as it does on day one.
+          {t("craftBody")}
         </p>
         <span className="inline-block mt-6 font-[family-name:var(--font-mono)] text-xs tracking-wide text-hvn-forest/70">
-          5-year structural warranty
+          {t("craftSpec")}
         </span>
       </FadeInView>
 
@@ -112,33 +120,35 @@ function CraftBlock() {
 
 /* ─── Main component ─── */
 export function FeaturesScroll() {
+  const t = useTranslations("whyHvnpod");
+
   return (
-    <section aria-label="Why HVNPOD" className="bg-hvn-white">
+    <section aria-label={t("eyebrow")} className="bg-hvn-white">
       {/* Section header */}
       <div className="pt-24 lg:pt-32 pb-16 lg:pb-24 text-center mx-auto max-w-4xl px-6 lg:px-16">
         <FadeInView direction="up" duration={0.5}>
           <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-hvn-forest mb-6">
-            Why HVNPOD
+            {t("eyebrow")}
           </p>
         </FadeInView>
         <TextReveal
           className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-hvn-black"
         >
-          The world got louder. We built the quiet.
+          {t("headline")}
         </TextReveal>
       </div>
 
       {/* Block 1: Focus */}
       <div className="pb-24 lg:pb-32">
-        <FocusBlock />
+        <FocusBlock t={t} />
       </div>
 
       {/* Block 2: Space */}
-      <SpaceBlock />
+      <SpaceBlock t={t} />
 
       {/* Block 3: Craft */}
       <div className="py-24 lg:py-32">
-        <CraftBlock />
+        <CraftBlock t={t} />
       </div>
     </section>
   );

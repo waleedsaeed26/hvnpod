@@ -14,10 +14,10 @@ interface FadeInViewProps {
 }
 
 const offsets: Record<string, { x: number; y: number }> = {
-  up: { x: 0, y: 40 },
-  down: { x: 0, y: -40 },
-  left: { x: 40, y: 0 },
-  right: { x: -40, y: 0 },
+  up: { x: 0, y: 20 },
+  down: { x: 0, y: -20 },
+  left: { x: 20, y: 0 },
+  right: { x: -20, y: 0 },
   none: { x: 0, y: 0 },
 };
 
@@ -28,7 +28,7 @@ export function FadeInView({
   duration = 0.6,
   className = "",
   once = true,
-  threshold = 0.2,
+  threshold = 0.05,
 }: FadeInViewProps) {
   const { x, y } = offsets[direction];
 
@@ -52,7 +52,7 @@ export function FadeInView({
       variants={variants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, amount: threshold }}
+      viewport={{ once, amount: threshold, margin: "100px" }}
       className={className}
     >
       {children}

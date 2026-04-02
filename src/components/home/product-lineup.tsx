@@ -23,7 +23,7 @@ const products = [
     capacityLabel: "persons",
     tier: "Collaboration Pod",
     price: 132000,
-    image: "/images/products/hvnpod-one-blue.png",
+    image: "/images/products/hvnpod-one-studio.png",
   },
   {
     key: "meet",
@@ -31,7 +31,7 @@ const products = [
     capacityLabel: "persons",
     tier: "Team Meeting Pod",
     price: 187000,
-    image: "/images/products/hvnpod-one-forest.png",
+    image: "/images/products/hvnpod-one-beige.png",
   },
 ];
 

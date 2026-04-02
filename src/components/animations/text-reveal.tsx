@@ -59,8 +59,8 @@ function Word({
   range: [number, number];
   mode: "word" | "line";
 }) {
-  const opacity = useTransform(progress, range, [0.15, 1]);
-  const y = useTransform(progress, range, [8, 0]);
+  const opacity = useTransform(progress, range, [0.35, 1]);
+  const y = useTransform(progress, range, [4, 0]);
 
   return (
     <motion.span

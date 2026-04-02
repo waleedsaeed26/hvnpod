@@ -211,10 +211,10 @@ export function HeroSection() {
             style={{ scale: imageScale }}
           >
             <Image
-              src="/images/hero/hvnpod-one-hero.png"
-              alt="HVNPOD One — premium acoustic pod"
-              width={700}
-              height={700}
+              src="/images/hero/hvnpod-range.png"
+              alt="HVNPOD Range — One, Duo & Meet acoustic pods"
+              width={900}
+              height={500}
               className="w-full max-w-md lg:max-w-none h-auto drop-shadow-2xl"
               priority
             />

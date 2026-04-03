@@ -42,3 +42,10 @@ next-env.d.ts
 
 /src/generated/prisma
 dev.db
+
+# AI-generated images (large, local only)
+/public/images/confirmed/
+/public/images/new-gallery/
+/public/images/rejected/
+/photos/
+/social-media/
